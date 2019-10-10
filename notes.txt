@@ -18,10 +18,18 @@ DESCRIBE table_name;
 SHOW CREATE TABLE table_name;
 DROP TABLE table_name [IF EXISTS];
 
-// Adding to a table :
+// Insert to a table :
 INSERT INTO table_name (field1, field2, ...)
 VALUES ('value1', 'value2', ...);
 
 INSERT INTO quotes (author_first_name, author_last_name, content)
 VALUES ('Charles' ,'Lemagne','Knowing a second language is to have a second soul.'),
 ('Charles' ,'Lemagne','Knowing a second language is to have a second soul.');
+
+// Update existing data
+UPDATE quotes
+SET author_first_name = 'Samuel', author_last_name = 'Clemens'
+WHERE id = 4;
+
+// Sometimes you do not want to just remove a handful of records, but all the records from a table. For that, SQL also has a TRUNCATE command:
+TRUNCATE table_name;
