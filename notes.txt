@@ -33,3 +33,10 @@ WHERE id = 4;
 
 // Sometimes you do not want to just remove a handful of records, but all the records from a table. For that, SQL also has a TRUNCATE command:
 TRUNCATE table_name;
+
+// Delete
+DELETE FROM table_name WHERE column_name = 'value';
+DELETE FROM quotes WHERE id = 3;
+
+// Miscellaneous Output
+SELECT 'I am output!' AS 'Info';
