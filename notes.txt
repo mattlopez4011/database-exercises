@@ -1,3 +1,4 @@
+SHOW DATABASES;
 CREATE DATABASE database_name [IF NOT EXISTS];
 USE database_name;
 DROP DATABASE database_name;
@@ -17,3 +18,10 @@ DESCRIBE table_name;
 SHOW CREATE TABLE table_name;
 DROP TABLE table_name [IF EXISTS];
 
+// Adding to a table :
+INSERT INTO table_name (field1, field2, ...)
+VALUES ('value1', 'value2', ...);
+
+INSERT INTO quotes (author_first_name, author_last_name, content)
+VALUES ('Charles' ,'Lemagne','Knowing a second language is to have a second soul.'),
+('Charles' ,'Lemagne','Knowing a second language is to have a second soul.');

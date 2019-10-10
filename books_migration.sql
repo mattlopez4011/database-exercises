@@ -6,7 +6,7 @@ CREATE TABLE books (
     id INT UNSIGNED NOT NULL AUTO_INCREMENT,
     title VARCHAR(50) NOT NULL,
     author  VARCHAR(50) NOT NULL DEFAULT 'Unknown',
-    date_published VARCHAR(10) NOT NULL,
+    date_published VARCHAR(50) NOT NULL,
     description TEXT,
     bestseller_weeks VARCHAR(15) NOT NULL DEFAULT '0',
     PRIMARY KEY (id)
