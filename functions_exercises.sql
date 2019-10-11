@@ -1,3 +1,27 @@
+use employees;
+
+SELECT CONCAT('Hello ', 'Codeup', '!');
+
+SELECT CONCAT(emp_no,' - ', first_name) AS 'display_name', gender
+FROM employees limit 5;
+
+SELECT CONCAT_WS('|',emp_no,' - ', first_name, '|') AS 'display_name', gender
+FROM employees limit 5;
+
+select now();
+select current_timestamp(),now(), curdate(), curtime();
+
+SELECT CONCAT(
+               'Teaching people to code for ',
+               ((((UNIX_TIMESTAMP() - UNIX_TIMESTAMP('2014-02-04')) / 60) / 60) /24) / 365,
+               ' years'
+           );
+
+select min(birth_date), first_name, last_name from employees
+group by emp_no limit 1;
+
+
+
 USE employees;
 
 -- Find all employees with first names 'Irena', 'Vidya', or 'Maya'
@@ -57,22 +81,29 @@ USE employees;
 # WHERE last_name LIKE 'E%' OR last_name LIKE '%E';
 
 -- Duplicate the previous query and update it to find all employees whose last name starts and ends with 'E' — 899 rows.
-# SELECT * from employees
-# WHERE last_name LIKE 'E%e';
+SELECT * from employees
+WHERE last_name LIKE 'E%e';
+# "🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥"
+SELECT CONCAT(first_name, ' ',  last_name ) from employees
+WHERE last_name LIKE 'E%e';
+
 
 -- Find all employees hired in the 90s and born on Christmas — 362 rows.
 # Change the query for employees hired in the 90s and born on Christmas such that the first result is the oldest employee who was hired last. It should be Khun Bernini.
+SELECT * from employees
+WHERE hire_date LIKE '199%-%-%'
+  AND birth_date LIKE '%-12-25'
+ORDER BY hire_date DESC, birth_date DESC;
+# "🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥"
+SELECT
+
+
+# Update it to find just the first 5 employees.
 # SELECT * from employees
 # WHERE hire_date LIKE '199%-%-%'
 #   AND birth_date LIKE '%-12-25'
-# ORDER BY hire_date DESC, birth_date DESC;
-
-# Update it to find just the first 5 employees.
-SELECT * from employees
-WHERE hire_date LIKE '199%-%-%'
-AND birth_date LIKE '%-12-25'
-ORDER BY  birth_date, hire_date DESC
-limit 10;
+# ORDER BY  birth_date, hire_date DESC
+# limit 10;
 
 -- Find all employees with a 'q' in their last name but not 'qu' — 547 rows.
 # SELECT * from employees
