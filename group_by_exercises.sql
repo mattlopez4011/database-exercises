@@ -19,3 +19,19 @@ where last_name LIKE '%q%'
 AND last_name NOT LIKE '%qu%'
 GROUP BY last_name;
 
+SELECT concat(first_name, ' ', last_name ) AS Full_name, COUNT(*)
+FROM employees
+where last_name LIKE '%q%'
+  AND last_name NOT LIKE '%qu%'
+GROUP BY first_name, last_name
+ORDER BY COUNT(*) desc ;
+
+SELECT count(*), gender from employees
+WHERE(
+            first_name = 'Irena'
+        OR first_name = 'Vidya'
+        OR first_name = 'Maya'
+    )
+GROUP BY gender;
+
+
