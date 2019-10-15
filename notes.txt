@@ -40,3 +40,7 @@ DELETE FROM quotes WHERE id = 3;
 
 // Miscellaneous Output
 SELECT 'I am output!' AS 'Info';
+
+
+ALTER TABLE albums
+ADD UNIQUE (artist, name);
