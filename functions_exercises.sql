@@ -95,7 +95,10 @@ WHERE hire_date LIKE '199%-%-%'
   AND birth_date LIKE '%-12-25'
 ORDER BY hire_date DESC, birth_date DESC;
 # "🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥"
-SELECT
+SELECT datediff(now(), hire_date ) AS Days_worked FROM employees
+WHERE hire_date LIKE '199%-%-%'
+  AND birth_date LIKE '%-12-25'
+ORDER BY hire_date DESC, birth_date DESC;
 
 
 # Update it to find just the first 5 employees.
@@ -109,3 +112,4 @@ SELECT
 # SELECT * from employees
 # WHERE last_name LIKE '%q%'
 #   AND last_name NOT LIKE '%qu%';
+
