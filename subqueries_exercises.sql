@@ -15,5 +15,15 @@ where emp_no IN (
     SELECT emp_no
     FROM employees
     WHERE first_name = 'Aamod'
-)
-;
+);
+
+# 3 Find all the current department managers that are female.
+
+SELECT first_name, last_name
+FROM employees
+where gender = 'F'
+  and emp_no IN (
+    select emp_no
+    from dept_manager
+    where to_date > NOW()
+);
