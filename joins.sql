@@ -377,7 +377,7 @@ USE ceres_db;
 # List the address with the fewest pets. If a tie occurs, return the alphabetically first address.
 
 SELECT owners.address, COUNT(*) FROM owners
-                                         JOIN pets ON pets.owner_id = owners.id
+JOIN pets ON pets.owner_id = owners.id
 GROUP BY owners.address
 ORDER BY COUNT(*) ASC, owners.address
 LIMIT 1;
@@ -385,25 +385,19 @@ LIMIT 1;
 # Find the average age of pets for each address
 
 select o.address, AVG(p.age) from pets as p
-                                      join owners as o on o.id = p.owner_id
+join owners as o on o.id = p.owner_id
 group by o.address;
 
 # Output the "{NAME_OF_PET} is owned by {NAME_OF_OWNER}"
 
 SELECT CONCAT(pets.pet_name, ' is owned by ', owners.name) AS Message FROM pets
-                                                                               JOIN owners
-                                                                                    ON owners.id = pets.owner_id;
+JOIN owners
+ON owners.id = pets.owner_id;
 
 # Output the total age each pet owner's pets
 select o.name, SUM(p.age) as total_pets_age from pets as p
-                                                     join owners as o on o.id = p.owner_id
+join owners as o on o.id = p.owner_id
 group by o.name;
-
-
-
-
-
-
 
 
 
