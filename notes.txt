@@ -1,5 +1,5 @@
 SHOW DATABASES;
-CREATE DATABASE database_name [IF NOT EXISTS];
+CREATE DATABASE database_name IF NOT EXISTS;
 USE database_name;
 DROP DATABASE database_name;
 
