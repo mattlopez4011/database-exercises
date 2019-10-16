@@ -8,3 +8,12 @@ where hire_date IN (
     where emp_no = '101010'
     ); -- WORKS
 
+#2. Find all the titles held by all employees with the first name Aamod. 314 total titles, 6 unique titles
+SELECT title
+FROM titles
+where emp_no IN (
+    SELECT emp_no
+    FROM employees
+    WHERE first_name = 'Aamod'
+)
+;
